@@ -1,7 +1,8 @@
 import requests
 import os
-# from headers import headers
 import uuid
+from dotenv import load_dotenv
+load_dotenv()
 
 url = "http://localhost:7860/api/v1/run/375a7d91-b3ba-482e-8d5a-43914c33facb"  # The complete API endpoint URL for this flow
 
