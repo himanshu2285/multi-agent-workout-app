@@ -20,7 +20,7 @@ headers = {
 payload = {
     "output_type": "chat",
     "input_type": "chat",
-    "input_value": "How to make hair healthy?",
+    "input_value": "what is the use of integration and derivation in real life?",
     "session_id": str(uuid.uuid4())
 }
 
