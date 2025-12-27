@@ -1,6 +1,7 @@
 import streamlit as st
-from profiles import get_profile, create_profile, get_notes
+from profiles import get_notes, get_profile, create_profile
 from form_submit import update_personal_info, add_note, delete_note
+
 
 st.title("Multi-Agent Workout App")
 
@@ -15,7 +16,7 @@ def personal_data_form():
         age = st.number_input("Age", min_value=1, max_value=120, step=1, value=profile["general"]["age"])
         weight = st.number_input("Weight (kg)", min_value=0, max_value=300, step=1, value=profile["general"]["weight"])
         height = st.number_input("Height (cm)", min_value=0, max_value=250, step=1, value=profile["general"]["height"])
-        gender = st.radio("Gender", ["Male", "Female", "Other"], index=["Male", "Female", "Other"].index(profile["general"]["gender", "Male"]))
+        gender = st.radio("Gender", ["Male", "Female", "Other"], index=["Male", "Female", "Other"].index(profile["general"]["gender"]))
         fitness_level = st.selectbox("Fitness Level", ["Beginner", "Intermediate", "Advanced"], index=["Beginner", "Intermediate", "Advanced"].index(profile["general"]["fitness_level"]))
         activities = ("Sedentary", "Lightly Active", "Moderately Active", "Very Active", "Extra Active")
         activity_level = st.selectbox("Activity Level", activities, index=activities.index(profile["general"].get("activity_level", "Sedentary")))

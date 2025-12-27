@@ -10,7 +10,10 @@ def update_personal_info(existing, update_type, **kwargs):
         existing["update_type"] = kwargs
         update_field = {update_type: existing[update_type]}
 
-    personal_data_collection.update_one({ "_id": existing["_id"] }, { "$set": update_field })
+    personal_data_collection.update_one(
+        { "_id": existing["_id"] },
+        { "$set": update_field }
+    )
     
     
 def add_note(note, profile_id):

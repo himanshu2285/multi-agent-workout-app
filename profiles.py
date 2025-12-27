@@ -1,4 +1,4 @@
-from .db import personal_data_collection, notes_collection
+from db import personal_data_collection, notes_collection
 
 def get_value(_id):
     return {
@@ -14,20 +14,20 @@ def get_value(_id):
         },
         "goals": ["Weight Loss"],
         "nutrition": {
-            "colaries":2000,
-            "protein":150,
-            "carbs":150,
-            "fats":30
+            "calories": 2000,
+            "protein": 150,
+            "carbs": 150,
+            "fats": 30
         },
     }
-    
+
 def create_profile(_id):
     profile_values = get_value(_id)
     result = personal_data_collection.insert_one(profile_values)
-    return result.inserted_id, result
+    return result.inserted_id, profile_values
 
 def get_profile(_id):
-    return personal_data_collection.find_one({"_id": {"$eq": _id}})
+    return personal_data_collection.find_one({"_id": _id})
 
 def get_notes(_id):
-    return list(notes_collection.find({"user_id": {"$eq": _id}  }))
+    return list(notes_collection.find({"user_id": _id}))

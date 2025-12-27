@@ -5,12 +5,13 @@ import streamlit as st
 
 load_dotenv()
 
-ENDPOINT = os.getenv("ASTRA_ENDPOINT")
+ENDPOINT = os.getenv("ENDPOINT")
 TOKEN = os.getenv("Astra_DB_Application_Token")
 
 @st.cache_resource
 def get_db():
-    client = DataAPIClient(token=TOKEN)
+    # client = DataAPIClient(token=TOKEN)
+    client = DataAPIClient(os.getenv("Astra_DB_Application_Token"))
     db = client.get_database_by_api_endpoint(ENDPOINT)
     return db
 
