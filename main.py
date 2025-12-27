@@ -20,7 +20,7 @@ headers = {
 payload = {
     "output_type": "chat",
     "input_type": "chat",
-    "input_value": "what is the use of integration and derivation in real life?",
+    "input_value": "Create a 3 month workout plan for body building, my body weight is 70 and body fat percent is almost 25 to 30.",
     "session_id": str(uuid.uuid4())
 }
 
